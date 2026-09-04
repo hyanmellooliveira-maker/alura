@@ -50,19 +50,22 @@
            <h2>meu primeiro post</h2>   
            <p class="artigo-autor">por: Hyan Oliveira.</p>
            <p>Boas-vindas ao meu novo blog! aqui vou compartilhar curiosidades sobre a torcida os fanaticos.</p>
-           <button>❤️ <span>0</span></button>
+          <button>❤️ <span>0</span></button>
 <button>👍 <span>0</span></button>
 
 <script>
-const botoes = document.querySelectorAll("button");
+    const botoes = document.querySelectorAll("button");
 
-botoes.forEach(function(botao) {
-    botao.addEventListener("click", function() {
-        let contador = botao.querySelector("span");
-        contador.textContent = Number(contador.textContent) + 1;
+    botoes.forEach(function(botao) {
+        botao.addEventListener("click", function() {
+            const contador = botao.querySelector("span");
+            contador.textContent = Number(contador.textContent) + 1;
+        });
     });
-});
 </script>
+
+</body>
+</html>
        const botoes = document.querySelectorAll("button");
      
    botoes.forEach( function(botao){
