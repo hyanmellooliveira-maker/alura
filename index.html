@@ -24,9 +24,8 @@
         padding: 16px;
     }
 
+    /* POSTS UM EMBAIXO DO OUTRO */
     article {
-        display: flex;
-        gap: 20px;
         margin-bottom: 30px;
         padding-bottom: 30px;
         border-bottom: 1px solid #444444;
@@ -38,17 +37,13 @@
         object-fit: cover;
     }
 
-    article div {
-        flex: 1;
-    }
-
     .artigo-autor {
         font-weight: bold;
     }
 
     button {
         background-color: #333333;
-        color: #FFFFFF;
+        color: white;
         border: none;
         padding: 8px 12px;
         margin-right: 5px;
@@ -60,4 +55,113 @@
     button:hover {
         background-color: #555555;
     }
+
+    /* Botão depois que o leitor curtir */
+    button.curtiu {
+        background-color: #b30000;
+    }
 </style>
+
+</head> <body>
+<header>
+    <h1>Meu Blog Tech</h1>
+
+    <p>
+        Vou falar curiosidades sobre o Clube Athletico Paranaense
+        e sobre a torcida "Os Fanáticos".
+    </p>
+</header>
+
+<main>
+
+    <!-- PRIMEIRO POST -->
+    <article>
+
+        <img
+            src="Gemini_Generated_Image_149npf149npf149n.png"
+            alt="Ilustração da torcida organizada Os Fanáticos no estádio"
+        >
+
+        <h2>Meu primeiro post</h2>
+
+        <p class="artigo-autor">
+            Por: Hyan Oliveira
+        </p>
+
+        <p>
+            Boas-vindas ao meu novo blog! Aqui vou compartilhar
+            curiosidades sobre a torcida Os Fanáticos.
+        </p>
+
+        <button class="like">
+            ❤️ <span>0</span>
+        </button>
+
+        <button class="like">
+            👍 <span>0</span>
+        </button>
+
+    </article>
+
+
+    <!-- SEGUNDO POST -->
+    <article>
+
+        <img
+            src="Gemini_Generated_Image_149npf149npf149n.png"
+            alt="Ilustração da torcida organizada Os Fanáticos no estádio"
+        >
+
+        <h2>Meu segundo post</h2>
+
+        <p class="artigo-autor">
+            Por: Hyan Oliveira
+        </p>
+
+        <p>
+            Aqui vou compartilhar mais curiosidades
+            sobre a torcida Os Fanáticos.
+        </p>
+
+        <button class="like">
+            ❤️ <span>0</span>
+        </button>
+
+        <button class="like">
+            👍 <span>0</span>
+        </button>
+
+    </article>
+
+</main>
+
+
+<script>
+
+    const botoes = document.querySelectorAll(".like");
+
+    botoes.forEach(function(botao) {
+
+        botao.addEventListener("click", function() {
+
+            /* Se já curtiu, não faz nada */
+            if (botao.classList.contains("curtiu")) {
+                return;
+            }
+
+            const contador = botao.querySelector("span");
+
+            contador.textContent =
+                Number(contador.textContent) + 1;
+
+            /* Marca o botão como curtido */
+            botao.classList.add("curtiu");
+
+            /* Desativa o botão */
+            botao.disabled = true;
+
+        });
+
+    });
+
+</script>
