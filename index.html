@@ -137,31 +137,27 @@
 
 
 <script>
-
     const botoes = document.querySelectorAll(".like");
 
     botoes.forEach(function(botao) {
 
-        botao.addEventListener("click", function() {
+        let curtiu = false;
 
-            /* Se já curtiu, não faz nada */
-            if (botao.classList.contains("curtiu")) {
-                return;
+        function botaoClicado() {
+            console.log("fui clicado");
+
+            let texto = botao.querySelector("span");
+
+            if (curtiu === false) {
+                texto.textContent++;
+                curtiu = true;
+                botao.classList.add("curtiu");
+            } else {
+                texto.textContent--;
+                curtiu = false;
+                botao.classList.remove("curtiu");
             }
+        }
 
-            const contador = botao.querySelector("span");
-
-            contador.textContent =
-                Number(contador.textContent) + 1;
-
-            /* Marca o botão como curtido */
-            botao.classList.add("curtiu");
-
-            /* Desativa o botão */
-            botao.disabled = true;
-
-        });
-
-    });
 
 </script>
