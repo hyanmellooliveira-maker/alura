@@ -52,18 +52,39 @@
            <p>Boas-vindas ao meu novo blog! aqui vou compartilhar curiosidades sobre a torcida os fanaticos.</p>
           <button>❤️ <span>0</span></button>
 <button>👍 <span>0</span></button>
+                 <body>
+      <header>
+       <h1>meu blog tech</h1>
+       <p> vou falar curiosidades sobre o clube athetico paranaense e sobre a torcida "os fanaticos"</p>
+      </header>
+       <main>
+          <article>
+             
+          </article>
+          <img src="Gemini_Generated_Image_149npf149npf149n.png" alt="Ilustração da torcida organizada Os Fanáticos no estádio">
+             <div>
+           <h2>meu segundo post</h2>   
+           <p class="artigo-autor">por: Hyan Oliveira.</p>
+           <p>Boas-vindas ao meu novo blog! aqui vou compartilhar curiosidades sobre a torcida os fanaticos.</p>
+        <button>❤️ <span>0</span></button>
+<button>👍 <span>0</span></button>
 
 <script>
     const botoes = document.querySelectorAll("button");
 
     botoes.forEach(function(botao) {
-       let curtiu = false;
+        let curtiu = false;
+
         botao.addEventListener("click", function() {
             const contador = botao.querySelector("span");
-           if (curtiu === false){
-              }
-            contador.textContent = Number(contador.textContent) + 1;
-           curtiu = true;
+
+            if (curtiu === false) {
+                contador.textContent = Number(contador.textContent) + 1;
+                curtiu = true;
+            } else {
+                contador.textContent = Number(contador.textContent) - 1;
+                curtiu = false;
+            }
         });
     });
 </script>
