@@ -57,9 +57,13 @@
     const botoes = document.querySelectorAll("button");
 
     botoes.forEach(function(botao) {
+       let curtiu = false;
         botao.addEventListener("click", function() {
             const contador = botao.querySelector("span");
+           if (curtiu === false){
+              }
             contador.textContent = Number(contador.textContent) + 1;
+           curtiu = true;
         });
     });
 </script>
