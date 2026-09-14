@@ -1,68 +1,81 @@
-<title>Meu Blog Tech</title>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Blog Tech</title>
 
-<style>
-    body {
-        background-color: #222222;
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
+    <style>
+        body {
+            background-color: #222222;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-    header {
-        background-color: #000000;
-        color: #FFFFFF;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 16px;
-    }
+        header {
+            background-color: #000000;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
 
-    main {
-        background-color: #000000;
-        color: #FFFFFF;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 16px;
-    }
+        main {
+            background-color: #000000;
+            color: #FFFFFF;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
 
-    /* POSTS UM EMBAIXO DO OUTRO */
-    article {
-        margin-bottom: 30px;
-        padding-bottom: 30px;
-        border-bottom: 1px solid #444444;
-    }
 
-    article img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-    }
+        article {
+            display: flex;       
+            gap: 20px;            
+            align-items: flex-start; 
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #444444;
+        }
 
-    .artigo-autor {
-        font-weight: bold;
-    }
+        article img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            flex-shrink: 0;      
+        }
 
-    button {
-        background-color: #333333;
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        margin-right: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
+        article h2 {
+            margin-top: 0;      
+        }
 
-    button:hover {
-        background-color: #555555;
-    }
+        .artigo-autor {
+            font-weight: bold;
+        }
 
-    /* Botão depois que o leitor curtir */
-    button.curtiu {
-        background-color: #b30000;
-    }
-</style>
+        button {
+            background-color: #333333;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin-right: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-</head> <body>
+        button:hover {
+            background-color: #555555;
+        }
+
+ 
+        button.curtiu {
+            background-color: #b30000;
+        }
+    </style>
+</head> 
+<body>
+
 <header>
     <h1>Meu Blog Tech</h1>
 
@@ -74,78 +87,76 @@
 
 <main>
 
-    <!-- PRIMEIRO POST -->
-    <article>
 
+    <article>
         <img
             src="Gemini_Generated_Image_149npf149npf149n.png"
             alt="Ilustração da torcida organizada Os Fanáticos no estádio"
         >
 
-        <h2>Meu primeiro post</h2>
+  
+        <div class="conteudo-post">
+            <h2>Meu primeiro post</h2>
 
-        <p class="artigo-autor">
-            Por: Hyan Oliveira
-        </p>
+            <p class="artigo-autor">
+                Por: Hyan Oliveira
+            </p>
 
-        <p>
-            Boas-vindas ao meu novo blog! Aqui vou compartilhar
-            curiosidades sobre a torcida Os Fanáticos.
-        </p>
+            <p>
+                Boas-vindas ao meu novo blog! Aqui vou compartilhar
+                curiosidades sobre a torcida Os Fanáticos.
+            </p>
 
-        <button class="like">
-            ❤️ <span>0</span>
-        </button>
+            <button class="like">
+                ❤️ <span>0</span>
+            </button>
 
-        <button class="like">
-            👍 <span>0</span>
-        </button>
-
+            <button class="like">
+                👍 <span>0</span>
+            </button>
+        </div>
     </article>
 
 
     <!-- SEGUNDO POST -->
     <article>
-
         <img
             src="Gemini_Generated_Image_149npf149npf149n.png"
             alt="Ilustração da torcida organizada Os Fanáticos no estádio"
         >
 
-        <h2>Meu segundo post</h2>
+        <!-- Agrupando os textos em uma div -->
+        <div class="conteudo-post">
+            <h2>Meu segundo post</h2>
 
-        <p class="artigo-autor">
-            Por: Hyan Oliveira
-        </p>
+            <p class="artigo-autor">
+                Por: Hyan Oliveira
+            </p>
 
-        <p>
-            Aqui vou compartilhar mais curiosidades
-            sobre a torcida Os Fanáticos.
-        </p>
+            <p>
+                Aqui vou compartilhar mais curiosidades
+                sobre a torcida Os Fanáticos.
+            </p>
 
-        <button class="like">
-            ❤️ <span>0</span>
-        </button>
+            <button class="like">
+                ❤️ <span>0</span>
+            </button>
 
-        <button class="like">
-            👍 <span>0</span>
-        </button>
-
+            <button class="like">
+                👍 <span>0</span>
+            </button>
+        </div>
     </article>
 
 </main>
-
 
 <script>
     const botoes = document.querySelectorAll(".like");
 
     botoes.forEach(function(botao) {
-
         let curtiu = false;
 
         function botaoClicado() {
-            console.log("fui clicado");
-
             let texto = botao.querySelector("span");
 
             if (curtiu === false) {
@@ -163,3 +174,5 @@
     });
 </script>
 
+</body>
+</html>
